@@ -1,0 +1,11 @@
+name: moep
+main: mocchi2002.moep.Main
+version: 1.0.0
+api-version: 1.15
+author: '@mocchi2002'
+
+commands:
+
+  achieve:
+
+    permission: moep.achieve

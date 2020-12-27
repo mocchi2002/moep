@@ -62,13 +62,17 @@ public class AchieveCommand implements CommandExecutor {
                 //指定されたプレイヤーのUUIDを取得する
                 //playerUniqueIdメソッドは下の方で定義している
 
+
+
                 String newAchieve = args[2];
                 //新しい称号を設定する
+
+                newAchieve = ChatColor.translateAlternateColorCodes('&', newAchieve);
 
                 playerAchieveRepository.setAchieve(specifiedPlayerUniqueId, newAchieve);
                 //指定されたプレイヤーのUUIDに、新しい称号を設定する
 
-                sender.sendMessage(ChatColor.GREEN + args[1] + "に" + newAchieve + "の称号を設定しました。");
+                sender.sendMessage(ChatColor.GREEN + args[1] + "に" + newAchieve + ChatColor.GREEN + "の称号を設定しました。");
 
                 break;
                 //Javaのswitch文はフォールスルーなのでcase毎にbreakしてswitch文を脱出しないといけない

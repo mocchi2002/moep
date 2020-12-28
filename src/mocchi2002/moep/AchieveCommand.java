@@ -50,7 +50,7 @@ public class AchieveCommand implements CommandExecutor {
                     // `/achieve set` か `/achieve set [player-name]` までしか入力していない場合
                     //称号まで絶対に入力してもらう必要があるので、引数が不足していれば弾く
 
-                    //エラーメッセージを送信する (sender.sendMessage(String))
+                    sender.sendMessage(ChatColor.RED + "achieve set [MCID] [称号] に合わせて記述してください。");
 
                     return true;
                 }
@@ -80,7 +80,7 @@ public class AchieveCommand implements CommandExecutor {
             case "remove": {
                 //args[0] が "remove" の場合
                 if (args.length <= 1) {
-                    warnSenderAboutMissingSpecifiedPlayer(sender);
+                    sender.sendMessage(ChatColor.RED + "achieve remove [MCID] に合わせて記述してください。");
 
                     return true;
                 }
@@ -98,6 +98,9 @@ public class AchieveCommand implements CommandExecutor {
 
                 break;
             }
+
+
+
             default: {
                 //args[0]がsetでもremoveでもなかった場合
 

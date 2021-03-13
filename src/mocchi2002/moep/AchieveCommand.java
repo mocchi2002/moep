@@ -22,6 +22,10 @@ public class AchieveCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(!sender.hasPermission("moep.admin")){
+            sender.sendMessage(ChatColor.RED + "権限がありません");
+            return true;
+        }
         /*
             label → "achieve", "ACHIEVE", "acHiEVe" など 大文字小文字は問わず入ってくるが、
                     全て小文字にした時、確実に"achieve"になることはBukkit(サーバーソフトウェアの名前)により
